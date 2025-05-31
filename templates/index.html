@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bypass Link Tool</title>
+</head>
+<body>
+    <h2>Bypass Link Tool (Chỉ dùng cho mục đích học tập)</h2>
+    <form method="POST">
+        <label>Nhập link rút gọn:</label><br>
+        <input type="text" name="url" style="width: 300px;" required>
+        <button type="submit">Bypass</button>
+    </form>
+
+    {% if result %}
+        <h3>✅ Link đích:</h3>
+        <a href="{{ result }}" target="_blank">{{ result }}</a>
+    {% elif error %}
+        <h3 style="color:red;">⚠️ {{ error }}</h3>
+    {% endif %}
+</body>
+</html>
